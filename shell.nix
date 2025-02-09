@@ -2,7 +2,7 @@
 
 let
   configuredPkgs = {
-    php = pkgs.php.withExtensions ({ all, enabled }: enabled ++ (with all; [ gnupg ]));
+    php = pkgs.php.withExtensions ({ all, enabled }: enabled ++ (with all; [ gnupg xdebug ]));
   };
 in
   pkgs.mkShell {
