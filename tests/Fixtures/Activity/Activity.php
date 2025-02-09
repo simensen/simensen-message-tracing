@@ -7,7 +7,7 @@ namespace Simensen\MessageTracing\Tests\Fixtures\Activity;
 final class Activity
 {
     public function __construct(
-        private ?ActivityTracer $activityTracer = null
+        private ?ActivityTracer $activityTracer = null,
     ) {
     }
 

@@ -11,7 +11,6 @@ namespace Simensen\MessageTracing;
  * is required to ensure the correct construction of a
  * specific implementation of the Trace interface.
  *
- *
  * @template TIdentity
  */
 interface TraceGenerator

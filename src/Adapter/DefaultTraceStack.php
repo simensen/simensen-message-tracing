@@ -27,7 +27,7 @@ final class DefaultTraceStack implements TraceStack
      */
     public function __construct(
         protected readonly TraceGenerator $traceGenerator,
-        protected readonly TraceIdentityGenerator $traceIdentityGenerator
+        protected readonly TraceIdentityGenerator $traceIdentityGenerator,
     ) {
     }
 }
