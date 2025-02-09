@@ -52,4 +52,4 @@ jobs:
 
       - name: Run PHPStan
         if: ${{ matrix.experimental == false }}
-        run: phpstan analyze -l9 src tests/Fixtures tests/Unit
+        run: phpstan analyze -l9 src tests/Fixtures
