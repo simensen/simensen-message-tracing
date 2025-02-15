@@ -21,7 +21,7 @@ phive: ## Installs tools via PHIVE
 	PHIVE_HOME=.build/phive phive install
 
 phpstan: ## Runs phpstan against example and library
-	phpstan analyse --memory-limit 1G -l9 src tests/Fixtures
+	phpstan analyse --memory-limit 1G -l9 src tests/Fixtures -v
 
 .PHONY: help
 help: ## Displays this list of targets with descriptions

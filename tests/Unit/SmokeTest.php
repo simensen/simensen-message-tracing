@@ -4,20 +4,17 @@ declare(strict_types=1);
 
 namespace Simensen\MessageTracing\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
 use Simensen\MessageTracing\Testing\MessageTracingScenario;
-use Simensen\MessageTracing\Testing\MessageTracingScenarioBehavior;
+use Simensen\MessageTracing\Testing\MessageTracingScenarioTestCase;
 use Simensen\MessageTracing\Tests\Fixtures\Activity\Activity;
 use Simensen\MessageTracing\Tests\Fixtures\Activity\ActivityId;
 use Simensen\MessageTracing\Tests\Fixtures\Activity\ActivityScenario;
 
-class SmokeTest extends TestCase
+/**
+ * @extends MessageTracingScenarioTestCase<Activity,ActivityId>
+ */
+class SmokeTest extends MessageTracingScenarioTestCase
 {
-    /**
-     * @use MessageTracingScenarioBehavior<Activity,ActivityId>
-     */
-    use MessageTracingScenarioBehavior;
-
     protected static function buildMessageTracingScenario(): MessageTracingScenario
     {
         return ActivityScenario::create();

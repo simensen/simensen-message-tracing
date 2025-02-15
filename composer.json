@@ -8,6 +8,7 @@
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.45",
+    "phpunit/phpunit": "^11.2.8",
     "symfony/uid": "^6.4 || ^7.0"
   },
   "minimum-stability": "stable",

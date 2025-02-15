@@ -20,7 +20,7 @@ trait MessageTracingScenarioBehavior
      */
     protected function messageTracingScenario(): MessageTracingScenario
     {
-        return $this->messageTracingScenario ??= self::buildMessageTracingScenario();
+        return $this->messageTracingScenario ??= static::buildMessageTracingScenario();
     }
 
     /**
