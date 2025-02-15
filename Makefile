@@ -16,7 +16,7 @@ phive: ## Installs tools via PHIVE
 	PHIVE_HOME=.build/phive phive install
 
 .PHONY: phpstan
-phpstan: phive ## Runs phpstan against fixtures and library
+phpstan: vendor ## Runs phpstan against fixtures and library
 	phpstan analyse --memory-limit 1G -l9 src tests/Fixtures -v
 
 .PHONY: help
