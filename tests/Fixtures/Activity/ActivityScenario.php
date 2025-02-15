@@ -6,23 +6,13 @@ namespace Simensen\MessageTracing\Tests\Fixtures\Activity;
 
 use Simensen\MessageTracing\Adapter\DefaultTraceStack;
 use Simensen\MessageTracing\Adapter\SpyingTraceStack;
+use Simensen\MessageTracing\Testing\MessageTracingScenario;
 
-final readonly class ActivityScenario
+/**
+ * @extends MessageTracingScenario<Activity,ActivityId>
+ */
+final readonly class ActivityScenario extends MessageTracingScenario
 {
-    /**
-     * @param DefaultTraceStack<ActivityId> $traceStack
-     * @param SpyingTraceStack<ActivityId> $spyingTraceStack
-     */
-    public function __construct(
-        public ActivityIdTraceIdentityGenerator $traceIdentityGenerator,
-        public ActivityTracerGenerator $tracerGenerator,
-        public DefaultTraceStack $traceStack,
-        public SpyingTraceStack $spyingTraceStack,
-        public CausationTracedActivityManager $causationTracedContainerManager,
-        public CorrelationTracedActivityManager $correlationTracedContainerManager,
-    ) {
-    }
-
     public static function create(): self
     {
         $traceIdentityGenerator = new ActivityIdTraceIdentityGenerator();
