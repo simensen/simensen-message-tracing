@@ -1,6 +1,6 @@
 name: PHPStan
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
   pull_request:
 
@@ -45,4 +45,4 @@ jobs:
 
       - name: Run PHPStan
         if: ${{ matrix.experimental == false }}
-        run: phpstan analyze -l9 src tests/Fixtures -v
+        run: make phpstan
