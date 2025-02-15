@@ -37,6 +37,6 @@ class ActivityId
 
     public function __toString()
     {
-        return $this->value->toString();
+        return $this->value->toRfc4122();
     }
 }
