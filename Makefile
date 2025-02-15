@@ -5,7 +5,7 @@ it: tools vendor
 tools: phive
 
 .PHONY: cs
-cs: yamllint php-cs-fixer ## Lints, normalizes, and fixes code style issues
+cs: php-cs-fixer yamllint ## Lints, normalizes, and fixes code style issues
 	composer normalize
 
 .PHONY: yamllint

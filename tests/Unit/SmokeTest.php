@@ -5,58 +5,64 @@ declare(strict_types=1);
 namespace Simensen\MessageTracing\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+use Simensen\MessageTracing\Testing\MessageTracingScenario;
+use Simensen\MessageTracing\Testing\MessageTracingScenarioBehavior;
 use Simensen\MessageTracing\Tests\Fixtures\Activity\Activity;
+use Simensen\MessageTracing\Tests\Fixtures\Activity\ActivityId;
 use Simensen\MessageTracing\Tests\Fixtures\Activity\ActivityScenario;
 
 class SmokeTest extends TestCase
 {
-    protected ActivityScenario $scenario;
+    /**
+     * @use MessageTracingScenarioBehavior<Activity,ActivityId>
+     */
+    use MessageTracingScenarioBehavior;
 
-    public function setUp(): void
+    protected static function buildMessageTracingScenario(): MessageTracingScenario
     {
-        $this->scenario = ActivityScenario::create();
+        return ActivityScenario::create();
     }
 
-    public function testSomething(): void
+    public function testBasicFunctionality(): void
     {
         $activityOne = new Activity();
 
         self::assertNull($activityOne->getActivityTracer());
-        self::assertTrue($this->scenario->getTraceStack()->isEmpty());
+        self::assertTrue($this->messageTracingScenario()->getTraceStack()->isEmpty());
 
-        $activityOne = $this->scenario->getCausationTracedContainerManager()->push($activityOne);
+        $activityOne = $this->messageTracingScenario()->getCausationTracedContainerManager()->push($activityOne);
 
         self::assertNotNull($activityTracerOne = $activityOne->getActivityTracer());
-        self::assertTrue($this->scenario->getTraceStack()->isNotEmpty());
-        self::assertTrue($this->scenario->getTraceStack()->isTail($activityTracerOne));
+        self::assertTrue($this->messageTracingScenario()->getTraceStack()->isNotEmpty());
+        self::assertTrue($this->messageTracingScenario()->getTraceStack()->isTail($activityTracerOne));
 
         $activityTwo = new Activity();
 
-        $activityTwo = $this->scenario->getCorrelationTracedContainerManager()->push($activityTwo);
+        $activityTwo = $this->messageTracingScenario()->getCorrelationTracedContainerManager()->push($activityTwo);
 
         self::assertNotNull($activityTracerTwo = $activityTwo->getActivityTracer());
         self::assertFalse($activityTracerTwo->equals($activityTracerOne));
-        self::assertTrue($this->scenario->getTraceStack()->isTail($activityTracerOne));
+        self::assertTrue($this->messageTracingScenario()->getTraceStack()->isTail($activityTracerOne));
 
         $activityThree = new Activity();
 
-        $activityThree = $this->scenario->getCausationTracedContainerManager()->push($activityThree);
+        $activityThree = $this->messageTracingScenario()->getCausationTracedContainerManager()->push($activityThree);
 
         self::assertNotNull($activityTracerThree = $activityThree->getActivityTracer());
         self::assertFalse($activityTracerThree->equals($activityTracerOne));
         self::assertFalse($activityTracerThree->equals($activityTracerTwo));
-        self::assertTrue($this->scenario->getTraceStack()->isTail($activityTracerThree));
+        self::assertTrue($this->messageTracingScenario()->getTraceStack()->isTail($activityTracerThree));
 
-        $activityThree = $this->scenario->getCausationTracedContainerManager()->pop($activityThree);
+        $activityThree = $this->messageTracingScenario()->getCausationTracedContainerManager()->pop($activityThree);
 
-        self::assertTrue($this->scenario->getTraceStack()->isTail($activityTracerOne));
+        self::assertTrue($this->messageTracingScenario()->getTraceStack()->isTail($activityTracerOne));
 
-        $activityTwo = $this->scenario->getCausationTracedContainerManager()->pop($activityTwo);
+        $activityTwo = $this->messageTracingScenario()->getCausationTracedContainerManager()->pop($activityTwo);
 
-        self::assertTrue($this->scenario->getTraceStack()->isTail($activityTracerOne));
+        self::assertTrue($this->messageTracingScenario()->getTraceStack()->isTail($activityTracerOne));
 
-        $activityOne = $this->scenario->getCausationTracedContainerManager()->pop($activityOne);
+        $activityOne = $this->messageTracingScenario()->getCausationTracedContainerManager()->pop($activityOne);
 
-        self::assertTrue($this->scenario->getTraceStack()->isEmpty());
+        self::assertTrue($this->messageTracingScenario()->getTraceStack()->isEmpty());
     }
 }
