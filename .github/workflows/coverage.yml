@@ -46,7 +46,7 @@ jobs:
         run: composer update --${{ matrix.stability }} ${{ matrix.composer-flags }} --prefer-dist --no-interaction --no-progress
 
       - name: Execute tests
-        run: phpunit --coverage-clover=coverage.clover
+        run: make clover
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5

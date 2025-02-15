@@ -30,6 +30,10 @@ tests: phpunit ## Tests code
 phpunit: vendor
 	./vendor/bin/phpunit
 
+.PHONY: clover
+clover: vendor
+	XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-clover=coverage.clover
+
 vendor: composer.json
 	composer validate --strict
 	composer install --no-interaction --no-progress
