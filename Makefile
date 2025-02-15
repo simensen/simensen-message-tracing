@@ -1,34 +1,34 @@
 .PHONY: it
-it: tools vendor
+it: tools vendor cs tests
 
 .PHONY: tools
 tools: phive
 
 .PHONY: cs
-cs: php-cs-fixer yamllint ## Lints, normalizes, and fixes code style issues
-	composer normalize
+cs: php-cs-fixer-fix ## Lints, normalizes, and fixes code style issues
 
-.PHONY: yamllint
-yamllint: phive
-	yamllint -c .yamllint.yaml --strict .
-
-.PHONY: php-cs-fixer
-php-cs-fixer: phive vendor
+.PHONY: php-cs-fixer-fix
+php-cs-fixer-fix: phive vendor
 	php-cs-fixer fix
 
 .PHONY: phive
 phive: ## Installs tools via PHIVE
 	PHIVE_HOME=.build/phive phive install
 
-phpstan: ## Runs phpstan against example and library
+.PHONY: phpstan
+phpstan: phive ## Runs phpstan against fixtures and library
 	phpstan analyse --memory-limit 1G -l9 src tests/Fixtures -v
 
 .PHONY: help
 help: ## Displays this list of targets with descriptions
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}'
 
-test: phive vendor ## Tests code
-	phpunit
+.PHONY: tests
+tests: phpunit ## Tests code
+
+.PHONY: phpunit
+phpunit: vendor
+	./vendor/bin/phpunit
 
 vendor: composer.json
 	composer validate --strict
