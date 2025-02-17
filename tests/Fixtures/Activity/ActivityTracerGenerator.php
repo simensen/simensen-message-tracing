@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Simensen\MessageTracing\Tests\Fixtures\Activity;
 
-use Simensen\MessageTracing\Trace;
-use Simensen\MessageTracing\TraceGenerator;
-use Simensen\MessageTracing\TraceIdentityGenerator;
+use Simensen\MessageTracing\Trace\Trace;
+use Simensen\MessageTracing\Trace\TraceGenerator;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityGenerator;
 
 /**
  * @implements TraceGenerator<ActivityId>

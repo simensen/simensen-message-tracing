@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing\Adapter;
+namespace Simensen\MessageTracing\TraceIdentity\Adapter;
 
-use Simensen\MessageTracing\TraceIdentityGenerator;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityGenerator;
 
 /**
  * @implements TraceIdentityGenerator<int>

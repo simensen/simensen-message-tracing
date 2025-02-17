@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing\Behavior\Trace;
+namespace Simensen\MessageTracing\Trace\Behavior;
 
 trait TraceGettersBehavior
 {

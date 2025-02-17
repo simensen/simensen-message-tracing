@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Simensen\MessageTracing\Tests\Fixtures\Activity;
 
-use Simensen\MessageTracing\Behavior\Trace\TraceComparisonBehavior;
-use Simensen\MessageTracing\Behavior\Trace\TraceGenerationBehavior;
-use Simensen\MessageTracing\Behavior\Trace\TraceGettersBehavior;
-use Simensen\MessageTracing\Trace;
-use Simensen\MessageTracing\TraceIdentityComparator;
+use Simensen\MessageTracing\Trace\Behavior\TraceComparisonBehavior;
+use Simensen\MessageTracing\Trace\Behavior\TraceGenerationBehavior;
+use Simensen\MessageTracing\Trace\Behavior\TraceGettersBehavior;
+use Simensen\MessageTracing\Trace\Trace;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityComparator;
 
 /**
  * @implements Trace<ActivityId>

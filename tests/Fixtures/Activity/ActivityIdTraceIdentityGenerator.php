@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Simensen\MessageTracing\Tests\Fixtures\Activity;
 
-use Simensen\MessageTracing\TraceIdentityGenerator;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityGenerator;
 
 /**
  * @implements TraceIdentityGenerator<ActivityId>

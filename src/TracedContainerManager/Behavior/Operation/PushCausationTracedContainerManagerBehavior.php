@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing\Behavior\TracedContainerManager\Operation;
+namespace Simensen\MessageTracing\TracedContainerManager\Behavior\Operation;
 
-use Simensen\MessageTracing\Behavior\TracedContainerManager\DefaultTracedContainerManagerBehavior;
+use Simensen\MessageTracing\TracedContainerManager\Behavior\DefaultTracedContainerManagerBehavior;
 
 /**
  * @template TContainer

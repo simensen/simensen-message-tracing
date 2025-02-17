@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing\Adapter;
+namespace Simensen\MessageTracing\TraceStack\Adapter;
 
-use Simensen\MessageTracing\Behavior\TraceStack\DefaultTraceStackBehavior;
-use Simensen\MessageTracing\TraceGenerator;
-use Simensen\MessageTracing\TraceIdentityGenerator;
-use Simensen\MessageTracing\TraceStack;
+use Simensen\MessageTracing\Trace\TraceGenerator;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityGenerator;
+use Simensen\MessageTracing\TraceStack\Behavior\DefaultTraceStackBehavior;
+use Simensen\MessageTracing\TraceStack\TraceStack;
 
 /**
  * @template TIdentity

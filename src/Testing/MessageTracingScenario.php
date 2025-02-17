@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Simensen\MessageTracing\Testing;
 
-use Simensen\MessageTracing\Adapter\SpyingTraceStack;
-use Simensen\MessageTracing\TracedContainerManager;
-use Simensen\MessageTracing\TraceGenerator;
-use Simensen\MessageTracing\TraceIdentityGenerator;
-use Simensen\MessageTracing\TraceStack;
+use Simensen\MessageTracing\Trace\TraceGenerator;
+use Simensen\MessageTracing\TracedContainerManager\TracedContainerManager;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityGenerator;
+use Simensen\MessageTracing\TraceStack\Adapter\SpyingTraceStack;
+use Simensen\MessageTracing\TraceStack\TraceStack;
 
 /**
  * @template TContainer

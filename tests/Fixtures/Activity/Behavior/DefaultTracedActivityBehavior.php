@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Simensen\MessageTracing\Tests\Fixtures\Activity\Behavior;
 
-use Simensen\MessageTracing\Behavior\TracedContainerManager\DefaultTracedContainerManagerBehavior;
 use Simensen\MessageTracing\Tests\Fixtures\Activity\Activity;
 use Simensen\MessageTracing\Tests\Fixtures\Activity\ActivityId;
 use Simensen\MessageTracing\Tests\Fixtures\Activity\ActivityTracer;
-use Simensen\MessageTracing\Trace;
+use Simensen\MessageTracing\Trace\Trace;
+use Simensen\MessageTracing\TracedContainerManager\Behavior\DefaultTracedContainerManagerBehavior;
 
 trait DefaultTracedActivityBehavior
 {

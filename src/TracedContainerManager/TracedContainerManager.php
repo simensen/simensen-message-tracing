@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing;
+namespace Simensen\MessageTracing\TracedContainerManager;
+
+use Simensen\MessageTracing\Trace\Trace;
+use Simensen\MessageTracing\TraceStack\TraceStack;
 
 /**
  * Manages a stack of objects that contain Traces.

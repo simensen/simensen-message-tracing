@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Simensen\MessageTracing\Tests\Fixtures\Activity;
 
-use Simensen\MessageTracing\Adapter\DefaultTraceStack;
-use Simensen\MessageTracing\Adapter\SpyingTraceStack;
 use Simensen\MessageTracing\Testing\MessageTracingScenario;
+use Simensen\MessageTracing\TraceStack\Adapter\DefaultTraceStack;
+use Simensen\MessageTracing\TraceStack\Adapter\SpyingTraceStack;
 
 /**
  * @extends MessageTracingScenario<Activity,ActivityId>

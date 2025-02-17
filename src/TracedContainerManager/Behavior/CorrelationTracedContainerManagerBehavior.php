@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing\Behavior\TracedContainerManager;
+namespace Simensen\MessageTracing\TracedContainerManager\Behavior;
 
-use Simensen\MessageTracing\Behavior\TracedContainerManager\Operation\PopTracedContainerManagerBehavior;
-use Simensen\MessageTracing\Behavior\TracedContainerManager\Operation\PushCorrelationTracedContainerManagerBehavior;
+use Simensen\MessageTracing\TracedContainerManager\Behavior\Operation\PopTracedContainerManagerBehavior;
+use Simensen\MessageTracing\TracedContainerManager\Behavior\Operation\PushCorrelationTracedContainerManagerBehavior;
 
 /**
  * @template TContainer

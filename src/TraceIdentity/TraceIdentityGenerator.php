@@ -2,7 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing;
+namespace Simensen\MessageTracing\TraceIdentity;
+
+use Simensen\MessageTracing\Trace\Trace;
+use Simensen\MessageTracing\Trace\TraceGenerator;
+use Simensen\MessageTracing\TraceStack\TraceStack;
 
 /**
  * Generates Trace Identities.

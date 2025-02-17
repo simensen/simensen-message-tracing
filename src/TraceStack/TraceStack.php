@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing;
+namespace Simensen\MessageTracing\TraceStack;
 
-use Simensen\MessageTracing\Adapter\DefaultTraceStack;
-use Simensen\MessageTracing\Adapter\SpyingTraceStack;
+use Simensen\MessageTracing\Trace\Trace;
+use Simensen\MessageTracing\TraceStack\Adapter\DefaultTraceStack;
+use Simensen\MessageTracing\TraceStack\Adapter\SpyingTraceStack;
 
 /**
  * Low-level stack of Traces.

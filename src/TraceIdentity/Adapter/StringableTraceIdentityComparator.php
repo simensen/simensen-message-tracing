@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing\Adapter;
+namespace Simensen\MessageTracing\TraceIdentity\Adapter;
 
-use Simensen\MessageTracing\Trace;
-use Simensen\MessageTracing\TraceIdentityComparator;
+use Simensen\MessageTracing\Trace\Trace;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityComparator;
 
 /**
  * @implements TraceIdentityComparator<string>

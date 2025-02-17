@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing;
+namespace Simensen\MessageTracing\TraceIdentity;
 
 /**
  * @template TIdentity

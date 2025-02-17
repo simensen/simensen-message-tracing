@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Simensen\MessageTracing\Tests\Fixtures\Activity;
 
-use Simensen\MessageTracing\TraceIdentityComparator;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityComparator;
 
 /**
  * @implements TraceIdentityComparator<ActivityId>

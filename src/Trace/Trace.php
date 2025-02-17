@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Simensen\MessageTracing;
+namespace Simensen\MessageTracing\Trace;
 
-use Simensen\MessageTracing\Behavior\Trace\TraceComparisonBehavior;
-use Simensen\MessageTracing\Behavior\Trace\TraceGenerationBehavior;
-use Simensen\MessageTracing\Behavior\Trace\TraceGettersBehavior;
+use Simensen\MessageTracing\Trace\Behavior\TraceComparisonBehavior;
+use Simensen\MessageTracing\Trace\Behavior\TraceGenerationBehavior;
+use Simensen\MessageTracing\Trace\Behavior\TraceGettersBehavior;
+use Simensen\MessageTracing\TraceIdentity\TraceIdentityGenerator;
 
 /**
  * A Trace is a container for identity and relationships.
