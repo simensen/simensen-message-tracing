@@ -1,5 +1,5 @@
 .PHONY: it
-it: tools vendor cs tests
+it: tools vendor cs phpstan tests
 
 .PHONY: tools
 tools: phive
