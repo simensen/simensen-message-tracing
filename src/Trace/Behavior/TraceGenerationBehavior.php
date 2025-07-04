@@ -16,27 +16,27 @@ trait TraceGenerationBehavior
      * @param TIdentity $causationId
      * @param TIdentity $correlationId
      */
-    protected function __construct(
+    final private function __construct(
         private readonly mixed $id,
         private readonly mixed $causationId,
         private readonly mixed $correlationId,
     ) {
     }
 
-    public static function start(TraceIdentityGenerator $traceIdentityGenerator): self
+    public static function start(TraceIdentityGenerator $traceIdentityGenerator): static
     {
         $id = $traceIdentityGenerator->generateTraceIdentity();
 
-        return new self(
+        return new static(
             $id,
             clone $id,
             clone $id,
         );
     }
 
-    public function next(TraceIdentityGenerator $traceIdentityGenerator): self
+    public function next(TraceIdentityGenerator $traceIdentityGenerator): static
     {
-        return new self(
+        return new static(
             $traceIdentityGenerator->generateTraceIdentity(),
             $this->id,
             $this->correlationId
